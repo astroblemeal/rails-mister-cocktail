@@ -1,0 +1,12 @@
+<h1>Ingredients</h1>
+<h3>What do you need to add to make this cocktail good?</h3>
+<%= @cocktail.name %>
+<% @cocktail.doses.each do |dose| %>
+  <h3>Description</h3>
+  <li><%= dose.description %></li>
+  <h3>Ingredients</h3>
+  <li><%= dose.ingredient.name %></li>
+ <% end %>
+<br>
+<%= link_to "Add stuff", new_cocktail_dose_path(@cocktail), class: "btn btn-success" %>
+<%= link_to "Go back", cocktails_path, class: "btn btn-success" %>
