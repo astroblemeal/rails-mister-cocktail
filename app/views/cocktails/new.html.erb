@@ -4,11 +4,12 @@
     <div class="col-xs-12 col-md-6">
         <%= simple_form_for @cocktail do |f| %>
           <%= f.input :name %>
-          <%= f.submit "Submit", class: "btn btn-success" %>
+          <%= f.input :photo, as: :file, input_html: { required: true } %>
+          <%= f.submit "Submit", class: "btn btn-primary" %>
         <% end %>
         <div>
           <br>
-          <%= link_to "Go back", cocktails_path, class: "btn btn-success btn-sm" %>
+          <%= link_to "Go back", cocktails_path %>
         </div>
     </div>
   </div>
