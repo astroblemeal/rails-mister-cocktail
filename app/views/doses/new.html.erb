@@ -1,9 +1,12 @@
 <h1>Add stuff</h1>
+<div class="container">
 <%  @cocktail.doses.each do |dose| %>
   <p> <%= dose.description %> / <%= dose.ingredient.name %> / <%= link_to  "🗑 Remove", dose_path(dose), method: :delete, data: {confirm: "Are you sure?"}, style: "color: red"  %></p>
   <% end %>
   <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
+  <%= f.input :alcohol %>
   <%= f.association :ingredient %>
- <%= f.button :submit, class: "btn btn-success" %>
+ <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
+</div>

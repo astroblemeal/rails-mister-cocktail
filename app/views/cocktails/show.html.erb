@@ -1,15 +1,17 @@
-<div class="container padded">
-  <h1 class="text-center">Add new cocktail</h1>
+<div class="container">
+  <h1 class="text-center">Cocktail info</h1>
   <div class="row">
     <div class="col-xs-12 col-md-6">
-<%= @cocktail.name %>
-<% @cocktail.doses.each do |dose| %>
-  <li><%= dose.description %></li>
-  <li><%= dose.ingredient.name %></li>
- <% end %>
-<br>
-<%= link_to "Add stuff", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
-<%= link_to "Go back", cocktails_path, class: "btn btn-primary" %>
-</div>
-</div>
+    <p><i class="fas fa-cocktail " aria-hidden="true"></i> <%= @cocktail.name %></p>
+    <% @cocktail.doses.each do |dose| %>
+     <p><i class="fas fa-info" aria-hidden="true"></i> <%= dose.description %></p>
+     <p><i class="fas fa-wine-bottle" aria-hidden="true"></i> <%= dose.alcohol %></p>
+    <p><i class="fas fa-seedling" aria-hidden="true"></i> <%= dose.ingredient.name %></p>
+  <% end %>
+  <br>
+    <%= link_to "Add stuff", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+    <br>
+    <%= link_to "Go back", cocktails_path %>
+    </div>
+  </div>
 </div>
