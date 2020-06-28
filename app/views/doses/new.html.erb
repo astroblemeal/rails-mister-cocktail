@@ -7,6 +7,8 @@
   <%= f.input :description %>
   <%= f.input :alcohol %>
   <%= f.association :ingredient %>
- <%= f.button :submit, class: "btn btn-primary" %>
+ <%= f.button :submit, class: "btn btn-secondary" %>
+ <br>
+ <%= link_to "Go back", cocktails_path %>
 <% end %>
 </div>
